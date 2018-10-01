@@ -3,10 +3,28 @@
 mini deferred, mimick jQuerys implementation
 https://softwareengineering.stackexchange.com/questions/143623/what-are-deferred-callbacks
 
+const myDeferredFuncFetchingData = () => {
+    let def = new Deferred();
+    // async things happens here
+    ...
+    // It went well
+    def.resolve(data);
+    ...
+    //or we check it and found error
+    def.reject(errormsg);
+    
+    return def;
+}
+
+
 
 usage: 
 const ret = myDeferredFuncFetchingData();
 const ret_two = myOtherDeferredFuncFetchingData();
+
+ret.done(function(response){
+    console.info('response from function : ' + response);
+})
 
 ai.Deferred().allDone([ret, ret2],function() {
     console.error('ALL DONE!');
