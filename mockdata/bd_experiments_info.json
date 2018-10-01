@@ -1,0 +1,13 @@
+{
+    "id1" : {
+        "active" : true,
+        "onlyworkingdays" : true,
+        "onlyworkinghours" : true
+    },
+    "id0002" : {
+        "active" : false,
+        "onlyworkingdays" : true,
+        "onlyworkinghours" : true
+    }
+
+}
